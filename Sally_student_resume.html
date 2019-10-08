@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sally Student Resume</title>
+  <meta name="viewport" content="width=device-width">
+  <style>
+        img { 
+          width: 50%; 
+          height: 50%;
+        }
+        nav a:hover {
+            font-size:20px;
+        }
+        @media screen and (max-width:600px){
+            div#container{
+                margin-left: 30px;
+                margin-right:30px;
+                min-width: 200px;
+            }
+        }
+        @media screen and (min-width:601px){
+            div#container{
+                
+                margin-left: 15%;
+                margin-right: 15%;
+                display:flex;
+                flex-direction: column;
+                justify-content:flex-start;
+                align-items:center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="application-root"></div>
+
+    <script
+    src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+    <script
+    src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+    <script
+    src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+    <script type="text/babel">
+    // Our code will go here
+    function App(props) {
+        console.log(props)
+        return (
+            <React.Fragment>
+            <div id="container">
+            <header>
+                <h1>{props.hi}</h1>
+            </header>
+
+            <main>
+            <section>
+                <nav>
+                <ul>
+                    <li><a href="#Contact Info">Contact Info</a></li>
+                    <li><a href="#Education">Education</a></li>
+                    <li><a href="#Professional Experience">Professional Experience</a></li>
+                </ul>
+                </nav>
+            </section>
+            
+            <section id="Contact Info">
+                <h2>Contact Info</h2>
+                <img src="https://m.media-amazon.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_.jpg" alt="Sally Student's Profile"/>
+                <p>{props.hi}</p>
+                <address>
+                    <a href="mailto:sallystudent@gmail.com">sallystudent@gmail.com</a><br/>
+                    <a href="tel:+13115552368">(311) 555-2368</a>
+                </address>
+            </section>
+
+            <section id="Education">
+                <h2>Education</h2>
+
+                <h3>New York University, Class of 2020</h3>
+                <ul>
+                <li>GPA: 3.7</li>
+                <li>Major in Computer Science</li>
+                </ul> 
+
+                <h3>Parsons the School of Design, Class of 2017</h3>
+                <ul>
+                <li>GPA: 3.6</li>
+                <li>Major in Design & Technology</li>
+                </ul>
+            </section>
+
+            <section id="Professional Experience">
+                <h2>Professional Experience</h2>
+
+                <h3>Amazon,Ux Engineering Intern</h3>
+                <p>May 2019 - Aug 2019</p>
+                <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </li>
+                </ul>
+
+                <h3>Helmut Lang, Graphic Designer</h3>
+                <p>Jan 2017 - May 2018</p>
+                <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </li>
+                </ul>
+
+            </section>
+            </main>
+            </div>
+            </React.Fragment>
+        );
+    }
+
+    // Nested elements inside the App
+    ReactDOM.render(
+        <App hi="Sally Student"/>,
+        document.querySelector('#application-root')
+    );
+    </script>
+</body>
+</html>
